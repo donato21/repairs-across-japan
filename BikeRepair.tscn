@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://BikeRepair.gd" type="Script" id=1]
+[ext_resource path="res://assets/bike/bike_0003_Gear.png" type="Texture" id=2]
+[ext_resource path="res://assets/bike/bike_0004_Chain.png" type="Texture" id=3]
+[ext_resource path="res://assets/tools/pump.png" type="Texture" id=4]
+[ext_resource path="res://assets/bike/bike_0000s_0002_Tire.png" type="Texture" id=5]
+[ext_resource path="res://assets/bike/bike_0000s_0001_Flat.png" type="Texture" id=6]
+[ext_resource path="res://assets/bike/bike_0000s_0000_Dented.png" type="Texture" id=7]
+[ext_resource path="res://assets/bike/bike_0000_Seat_handles.png" type="Texture" id=8]
+[ext_resource path="res://assets/bike/bike_0002_Body.png" type="Texture" id=9]
+[ext_resource path="res://assets/tools/wrench.png" type="Texture" id=10]
+[ext_resource path="res://Tool.gd" type="Script" id=11]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 232.499
+
+[node name="BikeRepair" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 0.0 ]
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( -318, 112 )
+mouse_filter = 2
+
+[node name="Bike" type="Node2D" parent="."]
+position = Vector2( 918, 409 )
+scale = Vector2( 0.962698, 0.962698 )
+
+[node name="Chain" type="Sprite" parent="Bike"]
+position = Vector2( -206.817, 252.889 )
+rotation = 0.132666
+scale = Vector2( 0.488916, 0.488916 )
+texture = ExtResource( 3 )
+
+[node name="Gear" type="Sprite" parent="Bike"]
+position = Vector2( -46.5824, 266.71 )
+rotation = 0.0509213
+scale = Vector2( 0.471857, 0.471857 )
+texture = ExtResource( 2 )
+offset = Vector2( 30, 10 )
+
+[node name="Body" type="Sprite" parent="Bike"]
+position = Vector2( 28.1829, 18.6083 )
+rotation = 0.0509213
+scale = Vector2( 0.542144, 0.542144 )
+texture = ExtResource( 9 )
+
+[node name="Tires" type="Node2D" parent="Bike"]
+position = Vector2( 500.183, 194.888 )
+scale = Vector2( 0.567551, 0.567551 )
+
+[node name="Dented" type="Sprite" parent="Bike/Tires"]
+visible = false
+position = Vector2( -68, -8.5 )
+texture = ExtResource( 7 )
+
+[node name="Flat" type="Sprite" parent="Bike/Tires"]
+visible = false
+position = Vector2( 6.00009, 5.50003 )
+scale = Vector2( 0.856691, 0.856691 )
+texture = ExtResource( 6 )
+
+[node name="Tire" type="Sprite" parent="Bike/Tires"]
+visible = false
+position = Vector2( 3, 3.5 )
+scale = Vector2( 0.850273, 0.850273 )
+texture = ExtResource( 5 )
+
+[node name="BackTires" type="Node2D" parent="Bike"]
+position = Vector2( -459.817, 194.888 )
+scale = Vector2( 0.567551, 0.567551 )
+
+[node name="Dented" type="Sprite" parent="Bike/BackTires"]
+visible = false
+position = Vector2( -68, -8.5 )
+texture = ExtResource( 7 )
+
+[node name="Flat" type="Sprite" parent="Bike/BackTires"]
+visible = false
+position = Vector2( 6.00009, 5.50003 )
+scale = Vector2( 0.856691, 0.856691 )
+texture = ExtResource( 6 )
+
+[node name="Tire" type="Sprite" parent="Bike/BackTires"]
+visible = false
+position = Vector2( 3, 3.5 )
+scale = Vector2( 0.850273, 0.850273 )
+texture = ExtResource( 5 )
+
+[node name="SeatHandles" type="Sprite" parent="Bike"]
+position = Vector2( 87.4177, -54.2897 )
+rotation = 0.0509213
+scale = Vector2( 0.541383, 0.541383 )
+texture = ExtResource( 8 )
+
+[node name="Airpump" type="Area2D" parent="."]
+position = Vector2( 196, 1025 )
+script = ExtResource( 11 )
+tool_name = "pump"
+
+[node name="Pump" type="Sprite" parent="Airpump"]
+scale = Vector2( 0.334165, 0.334165 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Airpump"]
+shape = SubResource( 1 )
+
+[node name="Wrench" type="Area2D" parent="."]
+position = Vector2( 1796, 1006 )
+script = ExtResource( 11 )
+tool_name = "wrench"
+
+[node name="Wrench" type="Sprite" parent="Wrench"]
+scale = Vector2( 0.216522, 0.216522 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wrench"]
+shape = SubResource( 1 )
+
+[node name="Wheels" type="Area2D" parent="."]
+position = Vector2( 952, 1094 )
+script = ExtResource( 11 )
+tool_name = "wheel"
+
+[node name="Tire" type="Sprite" parent="Wheels"]
+scale = Vector2( 0.410336, 0.410336 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheels"]
+shape = SubResource( 1 )

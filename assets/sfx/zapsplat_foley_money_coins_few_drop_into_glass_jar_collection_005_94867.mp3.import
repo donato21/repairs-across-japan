@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_foley_money_coins_few_drop_into_glass_jar_collection_005_94867.mp3-f623452a83fbbe1af0ac24b193f8bb88.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/zapsplat_foley_money_coins_few_drop_into_glass_jar_collection_005_94867.mp3"
+dest_files=[ "res://.import/zapsplat_foley_money_coins_few_drop_into_glass_jar_collection_005_94867.mp3-f623452a83fbbe1af0ac24b193f8bb88.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

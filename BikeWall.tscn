@@ -1,0 +1,182 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://BikeWall.gd" type="Script" id=1]
+[ext_resource path="res://assets/bike/bike_0003_Gear.png" type="Texture" id=2]
+[ext_resource path="res://assets/bike/bike_0004_Chain.png" type="Texture" id=3]
+[ext_resource path="res://assets/hub/bike-bg.png" type="Texture" id=4]
+[ext_resource path="res://assets/bike/bike_0000s_0002_Tire.png" type="Texture" id=5]
+[ext_resource path="res://assets/bike/bike_0000s_0001_Flat.png" type="Texture" id=6]
+[ext_resource path="res://assets/bike/bike_0000s_0000_Dented.png" type="Texture" id=7]
+[ext_resource path="res://assets/bike/bike_0000_Seat_handles.png" type="Texture" id=8]
+[ext_resource path="res://assets/bike/bike_0002_Body.png" type="Texture" id=9]
+[ext_resource path="res://assets/fonts/Peter Marker.otf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 256
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "press"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="BikeWall" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 0.0 ]
+}
+
+[node name="Bike-bg" type="Sprite" parent="."]
+scale = Vector2( 0.929293, 0.794372 )
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_pivot_offset = Vector2( -318, 112 )
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 1748.0
+margin_top = 3.75
+margin_right = 1850.0
+margin_bottom = 253.75
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "x"
+
+[node name="Label2" type="Label" parent="Control/Label"]
+margin_left = -27.0
+margin_right = 75.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 1 )
+text = "x"
+
+[node name="ExitButton" type="Button" parent="Control"]
+margin_left = 1636.0
+margin_top = 3.75
+margin_right = 1921.0
+margin_bottom = 301.75
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+anims/RESET = SubResource( 7 )
+anims/press = SubResource( 8 )
+
+[node name="Bike" type="Node2D" parent="."]
+position = Vector2( 918, 523 )
+scale = Vector2( 0.962698, 0.962698 )
+
+[node name="Chain" type="Sprite" parent="Bike"]
+position = Vector2( -206.817, 252.889 )
+rotation = 0.132666
+scale = Vector2( 0.488916, 0.488916 )
+texture = ExtResource( 3 )
+
+[node name="Gear" type="Sprite" parent="Bike"]
+position = Vector2( -46.5824, 266.71 )
+rotation = 0.0509213
+scale = Vector2( 0.471857, 0.471857 )
+texture = ExtResource( 2 )
+offset = Vector2( 30, 10 )
+
+[node name="Body" type="Sprite" parent="Bike"]
+position = Vector2( 28.1829, 18.6083 )
+rotation = 0.0509213
+scale = Vector2( 0.542144, 0.542144 )
+texture = ExtResource( 9 )
+
+[node name="Tires" type="Node2D" parent="Bike"]
+position = Vector2( 500.183, 194.888 )
+scale = Vector2( 0.567551, 0.567551 )
+
+[node name="Dented" type="Sprite" parent="Bike/Tires"]
+visible = false
+position = Vector2( -68, -8.5 )
+texture = ExtResource( 7 )
+
+[node name="Flat" type="Sprite" parent="Bike/Tires"]
+visible = false
+position = Vector2( 6.00009, 5.50003 )
+scale = Vector2( 0.856691, 0.856691 )
+texture = ExtResource( 6 )
+
+[node name="Tire" type="Sprite" parent="Bike/Tires"]
+visible = false
+position = Vector2( 3, 3.5 )
+scale = Vector2( 0.850273, 0.850273 )
+texture = ExtResource( 5 )
+
+[node name="BackTires" type="Node2D" parent="Bike"]
+position = Vector2( -459.817, 194.888 )
+scale = Vector2( 0.567551, 0.567551 )
+
+[node name="Dented" type="Sprite" parent="Bike/BackTires"]
+visible = false
+position = Vector2( -68, -8.5 )
+texture = ExtResource( 7 )
+
+[node name="Flat" type="Sprite" parent="Bike/BackTires"]
+visible = false
+position = Vector2( 6.00009, 5.50003 )
+scale = Vector2( 0.856691, 0.856691 )
+texture = ExtResource( 6 )
+
+[node name="Tire" type="Sprite" parent="Bike/BackTires"]
+visible = false
+position = Vector2( 3, 3.5 )
+scale = Vector2( 0.850273, 0.850273 )
+texture = ExtResource( 5 )
+
+[node name="SeatHandles" type="Sprite" parent="Bike"]
+position = Vector2( 87.4177, -54.2897 )
+rotation = 0.0509213
+scale = Vector2( 0.541383, 0.541383 )
+texture = ExtResource( 8 )
+
+[connection signal="pressed" from="Control/ExitButton" to="." method="_on_ExitButton_pressed"]

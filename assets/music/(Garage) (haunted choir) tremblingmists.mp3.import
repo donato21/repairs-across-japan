@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/(Garage) (haunted choir) tremblingmists.mp3-ef5279339497df21c43b387ee5575a99.mp3str"
+
+[deps]
+
+source_file="res://assets/music/(Garage) (haunted choir) tremblingmists.mp3"
+dest_files=[ "res://.import/(Garage) (haunted choir) tremblingmists.mp3-ef5279339497df21c43b387ee5575a99.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

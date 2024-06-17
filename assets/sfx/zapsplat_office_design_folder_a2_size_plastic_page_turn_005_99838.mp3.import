@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_office_design_folder_a2_size_plastic_page_turn_005_99838.mp3-e2f8e0d7f6cf70ca213b6758575e7882.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/zapsplat_office_design_folder_a2_size_plastic_page_turn_005_99838.mp3"
+dest_files=[ "res://.import/zapsplat_office_design_folder_a2_size_plastic_page_turn_005_99838.mp3-e2f8e0d7f6cf70ca213b6758575e7882.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

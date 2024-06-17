@@ -1,0 +1,400 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://assets/hub/clipboard-clip.png" type="Texture" id=1]
+[ext_resource path="res://assets/hub/pig.png" type="Texture" id=2]
+[ext_resource path="res://assets/hub/clipboard-paper.png" type="Texture" id=3]
+[ext_resource path="res://assets/hub/clipboard-shadow.png" type="Texture" id=4]
+[ext_resource path="res://assets/hub/pig-shadow.png" type="Texture" id=5]
+[ext_resource path="res://assets/hub/clipboard.png" type="Texture" id=6]
+[ext_resource path="res://assets/hub/hub.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/Peter Marker.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/hub/map.png" type="Texture" id=9]
+[ext_resource path="res://assets/Map.png" type="Texture" id=10]
+[ext_resource path="res://levels/MapUI.gd" type="Script" id=11]
+[ext_resource path="res://assets/sfx/zapsplat_office_design_folder_a2_size_plastic_page_turn_005_99838.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Client.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/sfx/zapsplat_foley_money_coins_few_drop_into_glass_jar_collection_005_94867.mp3" type="AudioStream" id=14]
+[ext_resource path="res://levels/Pig.gd" type="Script" id=15]
+[ext_resource path="res://levels/Shop.gd" type="Script" id=16]
+[ext_resource path="res://WorkOrder.tscn" type="PackedScene" id=17]
+[ext_resource path="res://BikeWall.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/hub/shimonoseki.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Money:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 825 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Money:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pig:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pig:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Money:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 825 ), Vector2( 0, 726 ), Vector2( 0, 726 ), Vector2( 0, 825 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Money:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pig:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pig:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -108 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="DynamicFont" id=25]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.513726, 0.364706, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.290196, 0.211765, 0.0901961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.290196, 0.211765, 0.0901961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.290196, 0.211765, 0.0901961, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 256
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 0.172549 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MapSprite/Label:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "click"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("MapSprite/Label:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Shop" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="Shimonoseki" type="Sprite" parent="."]
+position = Vector2( 1484, 294 )
+texture = ExtResource( 19 )
+
+[node name="Client" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1030, 413 )
+scale = Vector2( 0.312042, 0.312042 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 638.0
+margin_top = 51.0
+margin_right = 758.0
+margin_bottom = 701.0
+color = Color( 0.458824, 0.309804, 0.141176, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 1259.0
+margin_top = 51.0
+margin_right = 1377.0
+margin_bottom = 701.0
+color = Color( 0.458824, 0.309804, 0.141176, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Hub" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallMap" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.690196 )
+position = Vector2( 1671, 289 )
+rotation = -0.0154784
+scale = Vector2( 0.725951, 0.725951 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clipboard" type="Node2D" parent="."]
+position = Vector2( 0, 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Clipboard-shadow" type="Sprite" parent="Clipboard"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Clipboard" type="Sprite" parent="Clipboard"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="WorkOrder" parent="Clipboard/Clipboard" instance=ExtResource( 17 )]
+visible = false
+
+[node name="Clipboard-paper" type="Sprite" parent="Clipboard"]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Clipboard-clip" type="Sprite" parent="Clipboard"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Pig" type="Node2D" parent="."]
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+money_sfx = ExtResource( 14 )
+
+[node name="Pig-shadow" type="Sprite" parent="Pig"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Money" type="Label" parent="Pig"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 825.0
+margin_right = 369.0
+margin_bottom = 888.0
+custom_fonts/font = SubResource( 1 )
+text = "0 ¥"
+align = 1
+
+[node name="Pig" type="Sprite" parent="Pig"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pig"]
+anims/RESET = SubResource( 18 )
+anims/show = SubResource( 19 )
+
+[node name="Button" type="Button" parent="Pig"]
+margin_top = 725.0
+margin_right = 453.0
+margin_bottom = 1074.0
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/focus = SubResource( 22 )
+custom_styles/disabled = SubResource( 23 )
+custom_styles/normal = SubResource( 24 )
+
+[node name="BikeButton" type="Button" parent="."]
+margin_left = 888.0
+margin_top = 953.0
+margin_right = 1125.0
+margin_bottom = 1051.0
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+text = "Check Bike"
+
+[node name="MapUI" type="Node2D" parent="."]
+script = ExtResource( 11 )
+paper_sfx = ExtResource( 12 )
+
+[node name="MapSprite" type="Sprite" parent="MapUI"]
+position = Vector2( 0, 1100 )
+scale = Vector2( 1, 0.8 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Label" type="Label" parent="MapUI/MapSprite"]
+margin_left = 1748.0
+margin_top = 3.75
+margin_right = 1850.0
+margin_bottom = 253.75
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "x"
+
+[node name="Label2" type="Label" parent="MapUI/MapSprite/Label"]
+margin_left = -27.0
+margin_right = 75.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 2 )
+text = "x"
+
+[node name="ExitMapButton" type="Button" parent="MapUI/MapSprite"]
+margin_left = 1636.0
+margin_top = 3.75
+margin_right = 1921.0
+margin_bottom = 301.75
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 15 )
+
+[node name="HubMapButton" type="Button" parent="MapUI"]
+margin_left = 1440.0
+margin_top = 126.0
+margin_right = 1900.0
+margin_bottom = 456.0
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="MapUI"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MapUI"]
+anims/RESET = SubResource( 16 )
+anims/click = SubResource( 17 )
+
+[node name="BikeWall" parent="." instance=ExtResource( 18 )]
+visible = false
+
+[connection signal="mouse_entered" from="Pig/Button" to="Pig" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Pig/Button" to="Pig" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Pig/Button" to="Pig" method="_on_Button_pressed"]
+[connection signal="pressed" from="BikeButton" to="." method="_on_BikeButton_pressed"]
+[connection signal="pressed" from="MapUI/MapSprite/ExitMapButton" to="MapUI" method="_on_ExitMapButton_pressed"]
+[connection signal="pressed" from="MapUI/HubMapButton" to="MapUI" method="_on_HubMapButton_pressed"]

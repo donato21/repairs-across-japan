@@ -1,0 +1,203 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/hub/clipboard-paper.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/Peter Marker.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://WorkOrder.gd" type="Script" id=3]
+[ext_resource path="res://assets/sfx/zapsplat_office_design_folder_a2_size_plastic_page_turn_005_99838.mp3" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.215686, 0.65098, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0745098, 0.462745, 0.14902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.0745098, 0.462745, 0.14902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0745098, 0.462745, 0.14902, 1 )
+
+[node name="WorkOrder" type="Node2D"]
+script = ExtResource( 3 )
+paper_sfx = ExtResource( 4 )
+
+[node name="Clipboard-paper" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Control" type="Control" parent="."]
+margin_left = 1482.0
+margin_top = 568.0
+margin_right = 1837.0
+margin_bottom = 1004.0
+rect_rotation = -0.267755
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 11
+
+[node name="NameLabel" type="Label" parent="Control/VBoxContainer"]
+margin_right = 355.0
+margin_bottom = 32.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Name :"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 43.0
+margin_right = 355.0
+margin_bottom = 75.0
+size_flags_vertical = 5
+
+[node name="NameCheckBox" type="CheckBox" parent="Control/VBoxContainer/HBoxContainer"]
+margin_right = 16.0
+margin_bottom = 32.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="Name" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
+margin_left = 20.0
+margin_right = 305.0
+margin_bottom = 32.0
+size_flags_horizontal = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Tyrone Thiblesnatcher"
+
+[node name="BikeLabel" type="Label" parent="Control/VBoxContainer"]
+margin_top = 86.0
+margin_right = 355.0
+margin_bottom = 118.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Bike Condition :"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 129.0
+margin_right = 355.0
+margin_bottom = 161.0
+size_flags_vertical = 5
+
+[node name="ChainCheckBox" type="CheckBox" parent="Control/VBoxContainer/HBoxContainer3"]
+margin_right = 16.0
+margin_bottom = 32.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="Chain" type="Label" parent="Control/VBoxContainer/HBoxContainer3"]
+margin_left = 20.0
+margin_right = 355.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Has Chain"
+autowrap = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 172.0
+margin_right = 355.0
+margin_bottom = 204.0
+size_flags_vertical = 5
+
+[node name="BackTireCheckBox" type="CheckBox" parent="Control/VBoxContainer/HBoxContainer4"]
+margin_right = 16.0
+margin_bottom = 32.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="BackTire" type="Label" parent="Control/VBoxContainer/HBoxContainer4"]
+margin_left = 20.0
+margin_right = 355.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Back Tire Flat"
+autowrap = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 215.0
+margin_right = 355.0
+margin_bottom = 247.0
+size_flags_vertical = 5
+
+[node name="FrontTireCheckBox" type="CheckBox" parent="Control/VBoxContainer/HBoxContainer5"]
+margin_right = 16.0
+margin_bottom = 32.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+
+[node name="FrontTire" type="Label" parent="Control/VBoxContainer/HBoxContainer5"]
+margin_left = 20.0
+margin_right = 355.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Front Tire Flat"
+autowrap = true
+
+[node name="Spacer" type="Label" parent="Control/VBoxContainer"]
+margin_top = 258.0
+margin_right = 355.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+
+[node name="PriceLabel" type="Label" parent="Control/VBoxContainer"]
+margin_top = 301.0
+margin_right = 355.0
+margin_bottom = 333.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Quote:"
+autowrap = true
+
+[node name="Price" type="Label" parent="Control/VBoxContainer"]
+margin_top = 344.0
+margin_right = 355.0
+margin_bottom = 376.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "1000000000000"
+autowrap = true
+
+[node name="Button" type="Button" parent="Control"]
+visible = false
+margin_left = 63.116
+margin_top = 403.299
+margin_right = 295.116
+margin_bottom = 481.299
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+text = "APPROVE"
+
+[connection signal="toggled" from="Control/VBoxContainer/HBoxContainer/NameCheckBox" to="." method="_on_NameCheckBox_toggled"]
+[connection signal="toggled" from="Control/VBoxContainer/HBoxContainer3/ChainCheckBox" to="." method="_on_ChainCheckBox_toggled"]
+[connection signal="toggled" from="Control/VBoxContainer/HBoxContainer4/BackTireCheckBox" to="." method="_on_BackTireCheckBox_toggled"]
+[connection signal="toggled" from="Control/VBoxContainer/HBoxContainer5/FrontTireCheckBox" to="." method="_on_FrontTireCheckBox_toggled"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]

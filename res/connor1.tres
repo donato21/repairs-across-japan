@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://res/client_resource.gd" type="Script" id=1]
+[ext_resource path="res://res/connor1_bike.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Connor Dog"
+price = 10000
+bike = ExtResource( 2 )
+appearance = 1

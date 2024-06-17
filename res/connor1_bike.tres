@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://res/bike_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+color = Color( 0.152941, 0.109804, 0.541176, 1 )
+chain = true
+back_tire = 1
+front_tire = 1
