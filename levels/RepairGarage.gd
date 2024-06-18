@@ -11,6 +11,8 @@ func _ready():
 	load_next_bike()
 	yield(get_tree().create_timer(1),"timeout")
 	Global.emit_signal("repair_loaded")
+	if current_bike:
+		$CanvasLayer/BikeRepair.gen_bike()
 
 func load_next_bike():
 	current_bike = Global.repair_queue.pop_front()

@@ -67,7 +67,6 @@ omni_attenuation = 1.6245
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Storage" type="Button" parent="CanvasLayer"]
-visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -84,7 +83,6 @@ flat = true
 icon_align = 1
 
 [node name="Tools" type="Button" parent="CanvasLayer"]
-visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -75.0
@@ -101,7 +99,6 @@ __meta__ = {
 }
 
 [node name="Hallway" type="Button" parent="CanvasLayer"]
-visible = false
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -125,6 +122,7 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="BikeRepair" parent="CanvasLayer" instance=ExtResource( 9 )]
+visible = false
 
 [connection signal="pressed" from="CanvasLayer/Storage" to="." method="_on_Storage_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tools" to="." method="_on_Tools_pressed"]

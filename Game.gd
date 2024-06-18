@@ -4,6 +4,7 @@ export var starting_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	OS.set_window_maximized(true)
 	if starting_scene != null:
 		Global.music = $MusicStream
 		Global.ambience = $AmbienceStream
