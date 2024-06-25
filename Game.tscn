@@ -1,24 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://levels/MainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://CanvasLayer.gd" type="Script" id=3]
-[ext_resource path="res://assets/fonts/Peter Marker.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://CanvasLayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ScriptProcessor.gd" type="Script" id=5]
 [ext_resource path="res://ClientManager.gd" type="Script" id=6]
-
-[sub_resource type="DynamicFont" id=2]
-size = 64
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 48
-extra_spacing_char = 4
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 32
-font_data = ExtResource( 4 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -42,54 +28,4 @@ script = ExtResource( 6 )
 
 [node name="MainScene" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource( 3 )
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-color = Color( 0, 0, 0, 1 )
-
-[node name="Tween" type="Tween" parent="CanvasLayer"]
-
-[node name="Dialog" type="Control" parent="CanvasLayer"]
-margin_right = 1920.0
-margin_bottom = 1080.0
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Dialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 716.0
-color = Color( 0, 0, 0, 0.768627 )
-
-[node name="Title" type="Label" parent="CanvasLayer/Dialog"]
-margin_left = 20.0
-margin_top = 736.0
-margin_right = 533.0
-margin_bottom = 816.0
-custom_fonts/font = SubResource( 2 )
-text = "Jimmothy Carbunkle"
-
-[node name="Text" type="RichTextLabel" parent="CanvasLayer/Dialog"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -251.0
-margin_right = -20.0
-margin_bottom = -20.0
-custom_fonts/normal_font = SubResource( 3 )
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-
-[node name="Tooltip" type="Label" parent="CanvasLayer/Dialog"]
-margin_left = 1367.0
-margin_top = 980.0
-margin_right = 1880.0
-margin_bottom = 1060.0
-custom_colors/font_color = Color( 1, 1, 1, 0.309804 )
-custom_fonts/font = SubResource( 4 )
-text = "[ Press Any Key to Continue ]"
-align = 2
-valign = 2
+[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]

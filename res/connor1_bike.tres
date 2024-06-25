@@ -6,5 +6,6 @@
 script = ExtResource( 1 )
 color = Color( 0.152941, 0.109804, 0.541176, 1 )
 chain = true
+gear = true
 back_tire = 1
 front_tire = 1

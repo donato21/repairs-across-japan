@@ -3,8 +3,6 @@ extends Node2D
 var checkboxes: Array
 var bike: BikeResource
 
-export var paper_sfx: AudioStream
-
 func show_wo(client: ClientResource):
 	bike = client.bike
 	var bike_details: String
@@ -30,8 +28,7 @@ func show_wo(client: ClientResource):
 		bike_details = "Front tire is dented."
 	$Control/VBoxContainer/HBoxContainer5/FrontTire.text = bike_details
 	$Control/VBoxContainer/Price.text = String(client.price) + Global.currency
-	if paper_sfx != null:
-		Global.play_sfx(paper_sfx)
+	Global.play_paper()
 	show()
 
 
@@ -64,7 +61,7 @@ func _on_FrontTireCheckBox_toggled(button_pressed):
 
 
 func _on_Button_pressed():
-	Global.repair_queue.append(bike)
+	Global.bike_queue.append(bike)
 	Global.emit_signal("wo_approved")
 	Global.play_paper()
 	hide()

@@ -5,6 +5,7 @@ var fade_time = 1
 func _ready():
 	$Dialog.hide()
 	$ColorRect.show()
+	fadein()
 
 func fadeout():
 	$Tween.stop_all()

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Running on Gravel.wav-063f3f3fe8d3c847b5996027fd80397d.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Running on Gravel.wav"
+dest_files=[ "res://.import/Running on Gravel.wav-063f3f3fe8d3c847b5996027fd80397d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

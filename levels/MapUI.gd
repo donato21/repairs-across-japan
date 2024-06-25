@@ -1,11 +1,9 @@
 extends Node2D
 
 var TIME = 0.2
-export var paper_sfx: AudioStream
 
 func _on_HubMapButton_pressed():
-	if paper_sfx != null:
-		Global.play_sfx(paper_sfx)
+	Global.play_paper()
 	$Tween.stop_all()
 	$Tween.interpolate_property($MapSprite,"position",$MapSprite.position, Vector2(0,0),TIME)
 	yield(get_tree().create_timer(0.5),"timeout")
@@ -13,8 +11,7 @@ func _on_HubMapButton_pressed():
 	$HubMapButton.disabled = true
 
 func _on_ExitMapButton_pressed():
-	if paper_sfx != null:
-		Global.play_sfx(paper_sfx)
+	Global.play_paper()
 	$AnimationPlayer.play("click")
 	$Tween.stop_all()
 	$Tween.interpolate_property($MapSprite,"position",$MapSprite.position, Vector2(0,1100),TIME)

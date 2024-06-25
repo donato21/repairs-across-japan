@@ -43,11 +43,12 @@ var dict = {
 		{"dialog": [
 			"BB", "At every location you stop across Japan, Monkey Wrench Inc. will have a local repair shop you can use.",
 			"During your day shift, you will process work orders, and at night you will come to a local shop and fix people's bikes.",
-			"Let's get started, behind you is the tool wall."
+			"Let's get started, to your left is the tool wall."
 		]},
 		{"await": "looking_at_tools"},
 		{"dialog": ["Looks like this place is a bit rundown...", "Go ahead and grab the air pump, then fix the flats."]},
 		{"await": "repairs_done"},
+		{"timer":1},
 		{"dialog": [
 			"And that's it! Since we have today's quota done, make sure to get ready to move out tomorrow!",
 			"As you make quota, we'll provide the funds for traveling to your next destination.",
