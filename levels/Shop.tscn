@@ -1,8 +1,7 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/hub/clipboard-clip.png" type="Texture" id=1]
 [ext_resource path="res://assets/hub/pig.png" type="Texture" id=2]
-[ext_resource path="res://assets/hub/clipboard-paper.png" type="Texture" id=3]
 [ext_resource path="res://assets/hub/clipboard-shadow.png" type="Texture" id=4]
 [ext_resource path="res://assets/hub/pig-shadow.png" type="Texture" id=5]
 [ext_resource path="res://assets/hub/clipboard.png" type="Texture" id=6]
@@ -134,22 +133,6 @@ tracks/3/keys = {
 
 [sub_resource type="StyleBoxEmpty" id=24]
 
-[sub_resource type="DynamicFont" id=25]
-size = 32
-font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxFlat" id=26]
-bg_color = Color( 0.513726, 0.364706, 0.133333, 1 )
-
-[sub_resource type="StyleBoxFlat" id=27]
-bg_color = Color( 0.290196, 0.211765, 0.0901961, 1 )
-
-[sub_resource type="StyleBoxFlat" id=28]
-bg_color = Color( 0.290196, 0.211765, 0.0901961, 1 )
-
-[sub_resource type="StyleBoxFlat" id=29]
-bg_color = Color( 0.290196, 0.211765, 0.0901961, 1 )
-
 [node name="Shop" type="Node2D"]
 script = ExtResource( 16 )
 
@@ -188,31 +171,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Clipboard" type="Node2D" parent="."]
-position = Vector2( 0, 3 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Clipboard-shadow" type="Sprite" parent="Clipboard"]
-texture = ExtResource( 4 )
-centered = false
-
-[node name="Clipboard" type="Sprite" parent="Clipboard"]
-texture = ExtResource( 6 )
-centered = false
-
-[node name="WorkOrder" parent="Clipboard/Clipboard" instance=ExtResource( 17 )]
-visible = false
-
-[node name="Clipboard-paper" type="Sprite" parent="Clipboard"]
-visible = false
-texture = ExtResource( 3 )
-centered = false
-
-[node name="Clipboard-clip" type="Sprite" parent="Clipboard"]
-texture = ExtResource( 1 )
-centered = false
+[node name="MapUI" parent="." instance=ExtResource( 10 )]
 
 [node name="Pig" type="Node2D" parent="."]
 script = ExtResource( 15 )
@@ -253,24 +212,29 @@ custom_styles/focus = SubResource( 22 )
 custom_styles/disabled = SubResource( 23 )
 custom_styles/normal = SubResource( 24 )
 
-[node name="BikeButton" type="Button" parent="."]
-margin_left = 888.0
-margin_top = 953.0
-margin_right = 1125.0
-margin_bottom = 1051.0
-custom_fonts/font = SubResource( 25 )
-custom_styles/hover = SubResource( 26 )
-custom_styles/pressed = SubResource( 27 )
-custom_styles/focus = SubResource( 28 )
-custom_styles/normal = SubResource( 29 )
-text = "Check Bike"
-
-[node name="MapUI" parent="." instance=ExtResource( 10 )]
-
 [node name="BikeWall" parent="." instance=ExtResource( 18 )]
+
+[node name="Clipboard" type="Node2D" parent="."]
+position = Vector2( 0, 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Clipboard-shadow" type="Sprite" parent="Clipboard"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Clipboard" type="Sprite" parent="Clipboard"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="WorkOrder" parent="Clipboard/Clipboard" instance=ExtResource( 17 )]
 visible = false
+
+[node name="Clipboard-clip" type="Sprite" parent="Clipboard"]
+texture = ExtResource( 1 )
+centered = false
 
 [connection signal="mouse_entered" from="Pig/Button" to="Pig" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="Pig/Button" to="Pig" method="_on_Button_mouse_exited"]
 [connection signal="pressed" from="Pig/Button" to="Pig" method="_on_Button_pressed"]
-[connection signal="pressed" from="BikeButton" to="." method="_on_BikeButton_pressed"]

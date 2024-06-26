@@ -10,6 +10,8 @@ func _ready():
 		var tool_area: Area = child
 		tool_area.connect("mouse_entered",self,"on_mouse_entered",[tool_area])
 		tool_area.connect("mouse_exited",self,"on_mouse_exited",[tool_area])
+	if Global.day <= 1:
+		$Wrench.hide()
 
 func on_mouse_entered(toola: Area):
 	var meshi = toola.get_child(1)

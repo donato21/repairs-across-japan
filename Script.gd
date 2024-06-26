@@ -47,13 +47,22 @@ var dict = {
 		]},
 		{"await": "looking_at_tools"},
 		{"dialog": ["Looks like this place is a bit rundown...", "Go ahead and grab the air pump, then fix the flats."]},
+		{"trigger": "audio_scare"},
+		{"timer": 1},
+		{"dialog": ["P","What was that?","BB","I don't know, check behind you..."]},
+		{"await": "looking_at_hall"},
+		{"trigger": "start_scare"},
+		{"dialog": ["BB","Quick! Shine your flashlight on that thing! Dear GOD!!!","NR","Press F to use your flashlight"]},
+		{"await": "mouse_dead"},
+		{"dialog": ["Jeez, well now that she's scurried off finish up with the repair!"]},
 		{"await": "repairs_done"},
 		{"timer":1},
 		{"dialog": [
 			"And that's it! Since we have today's quota done, make sure to get ready to move out tomorrow!",
 			"As you make quota, we'll provide the funds for traveling to your next destination.",
 			"But remember, you won't get your special prize unless you complete each quota on the first day that you're on location!!",
-			"Use your map in the office and repair shop to move onto the next area, good luck!"
+			"Good luck!","NR","And that's the end of the Demo","This was pain ;-;",
+			"We hope to have more in the near future!","Thanks for playing! :D"
 		]}
 	],
 	"SKIPPY_JONES": {

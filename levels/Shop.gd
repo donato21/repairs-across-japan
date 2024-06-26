@@ -6,13 +6,10 @@ func _ready():
 	yield(get_tree().create_timer(1),"timeout")
 	Global.emit_signal("hub_loaded")
 	Global.connect("show_wo",self,"show_wo")
-	$BikeWall.connect("exit_bike",self,"exit_bike")
+	Global.day += 1
 
 func hide_client():
 	$Client.hide_visible()
-
-func exit_bike():
-	$BikeWall.hide()
 
 func show_wo():
 	if client != null:
@@ -40,7 +37,3 @@ func load_client(client_res: ClientResource):
 		$Client.chris_3()
 	elif client_res.appearance == 7:
 		$Client.mouse()
-
-
-func _on_BikeButton_pressed():
-	$BikeWall.show()

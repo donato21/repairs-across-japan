@@ -19,11 +19,14 @@ var bike_sfx: AudioStream = load("res://assets/sfx/zapsplat_transport_bicycle_be
 var pump_sfx: AudioStream = load("res://assets/sfx/transport_bicycle_hand_pump_operating_slow_speed_handle_piston_end.wav")
 var wrench_sfx: AudioStream = load("res://assets/sfx/zapsplat_indutrial_wrench_adjustable_plastic_handle_set_down_metal_tool_box_002_56394.wav")
 var walk_sfx: AudioStream = load("res://assets/sfx/Running on Gravel.wav")
+var mouse_sfx: Array = ["res://assets/sfx/mouse/dosteroidsreally.wav","res://assets/sfx/mouse/ghostinmy.wav","res://assets/sfx/mouse/help.wav","res://assets/sfx/mouse/ithinkarrested.wav","res://assets/sfx/mouse/mymomtold.wav","res://assets/sfx/mouse/nice.wav","res://assets/sfx/mouse/werebackin.wav","res://assets/sfx/mouse/what.wav","res://assets/sfx/mouse/whenishakethis.wav","res://assets/sfx/mouse/yeah.wav"]
+var jumpscare_sfx: AudioStream = load("res://assets/sfx/mouse/jumpscare/scream.wav")
 var repair_scene: PackedScene = load("res://levels/RepairGarage.tscn")
 var player_name = ""
 var currency = " ¥"
 var money = 0
 var player_hand: Array = []
+var day = 0
 
 signal fade # Triggers every tween end of overlay's color rect modulation
 signal hub_loaded # Triggers on hub load
@@ -40,8 +43,12 @@ signal looking_at_hall # Triggers on looking at hall in garage
 signal looking_at_storage # Triggers on looking at storage in garage
 signal bike_repaired  # Triggers on bike repair done
 signal repairs_done  # Triggers on all repairs for all bikes done
+signal audio_scare # Triggers repair garage mouse audio
+signal mouse_dead # Triggers when mouse gets blasted
+signal start_scare # Triggers forced scare
 
 func _ready():
+	rand_seed(Time.get_unix_time_from_system())
 	OS.set_window_maximized(true)
 	connect("load_repair",self,"change_scene",[repair_scene])
 	if overlay == null:
@@ -110,3 +117,10 @@ func play_wrench():
 
 func play_walk():
 	play_sfx(walk_sfx)
+
+func get_mouse_sfx():
+	if mouse_sfx.size() > 0:
+		return load(mouse_sfx[int(rand_range(0,mouse_sfx.size()))])
+
+func play_jumpscare():
+	play_sfx(jumpscare_sfx)

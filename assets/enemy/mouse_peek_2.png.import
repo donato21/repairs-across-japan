@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/bike_0002_Body.png-785dff508b1c94912d2e74a9531bb475.s3tc.stex"
-path.etc2="res://.import/bike_0002_Body.png-785dff508b1c94912d2e74a9531bb475.etc2.stex"
+path.s3tc="res://.import/mouse_peek_2.png-ff730e295a2d209c18f243bbc3478b8c.s3tc.stex"
+path.etc2="res://.import/mouse_peek_2.png-ff730e295a2d209c18f243bbc3478b8c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/bike/bike_0002_Body.png"
-dest_files=[ "res://.import/bike_0002_Body.png-785dff508b1c94912d2e74a9531bb475.s3tc.stex", "res://.import/bike_0002_Body.png-785dff508b1c94912d2e74a9531bb475.etc2.stex" ]
+source_file="res://assets/enemy/mouse_peek_2.png"
+dest_files=[ "res://.import/mouse_peek_2.png-ff730e295a2d209c18f243bbc3478b8c.s3tc.stex", "res://.import/mouse_peek_2.png-ff730e295a2d209c18f243bbc3478b8c.etc2.stex" ]
 
 [params]
 
@@ -26,8 +26,8 @@ flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
-process/fix_alpha_border=false
-process/premult_alpha=true
+process/fix_alpha_border=true
+process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 process/normal_map_invert_y=false

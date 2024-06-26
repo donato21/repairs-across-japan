@@ -1,6 +1,6 @@
 extends Node2D
 
-const characters: Dictionary = {"BB": "The Big Boss", "P": "", "CD": "Connor Dog", "CB": "Bris Chrod", "IM": "Tungsten Rat"}
+const characters: Dictionary = {"BB": "The Big Boss", "P": "", "CD": "Connor Dog", "CB": "Bris Chrod", "IM": "Tungsten Rat", "NR": ""}
 
 func _ready():
 	parse_script(GScript.dict.TUTORIAL)
